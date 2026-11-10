@@ -27,7 +27,8 @@ services:
       - hadoop_namenode:/hadoop/dfs/name
       - ./myhadoop:/myhadoop
     environment:
-      - CLUSTER_NAME=test
+      HDFS_CONF_dfs_client_block_write_replace-datanode-on-failure_enable: "false"
+      CLUSTER_NAME: test
     env_file:
       - ./hadoop.env
 
@@ -42,6 +43,7 @@ services:
       - hadoop_datanode:/hadoop/dfs/data
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
+      HDFS_CONF_dfs_client_block_write_replace-datanode-on-failure_enable: "false"
     env_file:
       - ./hadoop.env
 
