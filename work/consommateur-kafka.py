@@ -1,7 +1,7 @@
 import json
 from kafka import KafkaConsumer
 
-TOPIC = "weather_stream"
+TOPIC = "weather_transformed"
 BOOTSTRAP_SERVERS = "kafka:9092"
 
 consumer = KafkaConsumer(
